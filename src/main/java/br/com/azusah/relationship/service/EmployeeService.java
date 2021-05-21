@@ -13,6 +13,6 @@ public class EmployeeService {
     private final EmployeeRepository repository;
 
     public void save(Employee employee) {
-        repository.save(EmployeeEntity.builder().name("Daniel").build());
+        repository.save(EmployeeEntity.builder().name(employee.getName()).build());
     }
 }
