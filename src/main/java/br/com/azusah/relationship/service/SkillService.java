@@ -1,7 +1,7 @@
 package br.com.azusah.relationship.service;
 
 import br.com.azusah.relationship.model.Skill;
-import br.com.azusah.relationship.repository.SkillEntity;
+import br.com.azusah.relationship.repository.entity.SkillEntity;
 import br.com.azusah.relationship.repository.SkillRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

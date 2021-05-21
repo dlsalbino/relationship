@@ -1,4 +1,4 @@
-package br.com.azusah.relationship.controller;
+package br.com.azusah.relationship.controller.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

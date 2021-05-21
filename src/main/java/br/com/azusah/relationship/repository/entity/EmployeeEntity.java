@@ -1,4 +1,4 @@
-package br.com.azusah.relationship.repository;
+package br.com.azusah.relationship.repository.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

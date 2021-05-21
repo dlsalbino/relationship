@@ -1,5 +1,6 @@
 package br.com.azusah.relationship.controller;
 
+import br.com.azusah.relationship.controller.dto.EmployeeDto;
 import br.com.azusah.relationship.model.Employee;
 import br.com.azusah.relationship.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
