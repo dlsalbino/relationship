@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -33,6 +34,6 @@ public class EmployeeEntity {
             name = "TBL_EMPLOYEE_SKILL",
             joinColumns = @JoinColumn(name = "skill_id"),
             inverseJoinColumns = @JoinColumn(name = "employee_id"))
-    private Set<SkillEntity> skills;
+    private Set<SkillEntity> skills = new HashSet<>();
 
 }

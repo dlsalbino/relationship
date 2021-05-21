@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -28,5 +29,6 @@ public class SkillEntity {
     private String name;
 
     @ManyToMany(mappedBy = "skills")
-    private Set<EmployeeEntity> employees;
+    private Set<EmployeeEntity> employees = new HashSet<>();
+
 }
