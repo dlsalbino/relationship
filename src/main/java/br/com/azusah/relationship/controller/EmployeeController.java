@@ -1,6 +1,7 @@
 package br.com.azusah.relationship.controller;
 
 import br.com.azusah.relationship.controller.dto.EmployeeDto;
+import br.com.azusah.relationship.controller.dto.SkillDto;
 import br.com.azusah.relationship.model.Employee;
 import br.com.azusah.relationship.model.Skill;
 import br.com.azusah.relationship.service.EmployeeService;
@@ -20,14 +21,25 @@ public class EmployeeController {
     private final EmployeeService service;
 
     @PostMapping
-    void save(@RequestBody EmployeeDto employeeDto) {
-        service.save(Employee.builder()
-                .name(employeeDto.getName())
-                .skills(employeeDto.getSkills().stream()
+    EmployeeDto save(@RequestBody EmployeeDto dto) {
+        Employee model = service.save(Employee.builder()
+                .name(dto.getName())
+                .skills(dto.getSkills().stream()
                         .map(s -> Skill.builder()
                                 .id(s.getId())
                                 .name(s.getName()).build())
                         .collect(Collectors.toSet()))
                 .build());
+
+        return EmployeeDto.builder()
+                .id(model.getId())
+                .name(model.getName())
+                .skills(model.getSkills().stream()
+                        .map(s -> SkillDto.builder()
+                                .id(s.getId())
+                                .name(s.getName())
+                                .build())
+                        .collect(Collectors.toSet()))
+                .build();
     }
 }
