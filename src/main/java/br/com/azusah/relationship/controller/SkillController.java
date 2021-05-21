@@ -17,7 +17,15 @@ public class SkillController {
     private final SkillService service;
 
     @PostMapping
-    void save(@RequestBody SkillDto skillDto) {
-        service.save(Skill.builder().name(skillDto.getName()).build());
+    SkillDto save(@RequestBody SkillDto dto) {
+
+        Skill model = service.save(Skill.builder()
+                .name(dto.getName())
+                .build());
+
+        return SkillDto.builder()
+                .id(model.getId())
+                .name(model.getName())
+                .build();
     }
 }

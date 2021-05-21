@@ -12,7 +12,10 @@ public class SkillService {
 
     private final SkillRepository repository;
 
-    public void save(Skill skill) {
-        repository.save(SkillEntity.builder().name(skill.getName()).build());
+    public Skill save(Skill model) {
+        SkillEntity entity = repository.save(SkillEntity.builder().name(model.getName()).build());
+        return Skill.builder().id(entity.getId())
+                .name(entity.getName())
+                .build();
     }
 }
