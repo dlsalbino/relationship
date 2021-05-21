@@ -1,8 +1,8 @@
 package br.com.azusah.relationship.service;
 
 import br.com.azusah.relationship.model.Employee;
-import br.com.azusah.relationship.repository.entity.EmployeeEntity;
 import br.com.azusah.relationship.repository.EmployeeRepository;
+import br.com.azusah.relationship.repository.entity.EmployeeEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
